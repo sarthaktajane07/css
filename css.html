@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Form</title>
+  <style>
+    /* Task 1: Basic Form Styling */
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      background-color: #333333;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      margin: 50px auto;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"], input[type="email"], button, input[type="password"], select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #555555;
+      border-radius: 4px;
+      background-color: #222222;
+      color: #ffffff;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Task 2: Password Fields Styling */
+    input[type="password"]:focus {
+      border-color: #4CAF50;
+    }
+
+    input[type="password"]::placeholder {
+      color: #aaa;
+    }
+
+    /* Task 3: Checkbox and Radio Button Styling */
+    input[type="checkbox"], input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    label {
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    label:hover {
+      color: #4CAF50;
+    }
+
+    /* Task 4: Select Dropdown Styling */
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #555555;
+      border-radius: 4px;
+      background-color: #222222;
+      color: #ffffff;
+    }
+
+    select:hover {
+      border-color: #4CAF50;
+    }
+
+    option {
+      padding: 10px;
+      background-color: #333333;
+    }
+
+    /* Task 5: Submit and Reset Buttons Styling */
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    button[type="reset"] {
+      background-color: #f44336;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 0.8;
+    }
+
+    button[type="reset"]:hover {
+      opacity: 0.8;
+    }
+
+    /* Task 6: Textarea Styling */
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #555555;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      background-color: #222222;
+      color: #ffffff;
+    }
+
+    textarea:focus {
+      border-color: #4CAF50;
+    }
+
+    /* Task 7: Responsive Form */
+    @media (max-width: 768px) {
+      form {
+        width: 90%;
+      }
+    }
+
+    /* Task 8: Form Validation Styling */
+    input:valid {
+      border-color: green;
+    }
+
+    input:invalid {
+      border-color: red;
+    }
+
+    input:invalid:focus {
+      box-shadow: 0 0 5px red;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/submit-form" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+    <label><input type="checkbox" id="subscribe" name="subscribe"> Subscribe to Newsletter</label><br>
+
+    <label><input type="radio" id="male" name="gender" value="Male"> Male</label>
+    <label><input type="radio" id="female" name="gender" value="Female"> Female</label>
+
+    <label for="country">Select your country:</label>
+    <select id="country" name="country">
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+      <option value="canada">Canada</option>
+    </select>
+
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Enter your feedback..."></textarea>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+</body>
+</html>
